@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find your stolen bikes here!</title>
+  </head>
+  <body>
+    <div class = "container">
+      <div class = "jumbotron">
+        <h1>Try to see how many bikes are stolen near you!🚲🕵🏼‍♂️</h1> 
+      </div>
+      <div id = "inputs">
+        <form>
+          <label for = "distance">Enter how far you would like to search, in miles: </label>
+          <input type = "number" class = "form-control" id = "distance" name = "distance" required>
+          <label for = "location">Enter a location to search from:</label>
+          <input type="text" class="form-control" id="location" name="location" placeholder="Please enter a zipcode!" required> 
+          <button type="submit" class="btn btn-block" id="findBike">Find stolen bikes!</button>
+        </form>
+      </div>
+      <div id = "results">
+        <div id = "bikeStats" class = "card">
+          <div class = "row title">
+            <div class = "col-md-4">
+              <h2>Bicycle make and model</h2>
+            </div>
+            <div class = "col-md-4">
+              <h2>Date Stolen</h2>
+            </div>
+            <div class = "col-md-4" id = "photos">
+              <h2>Picture of the Stolen Bike</h2>
+            </div>
+          </div>
+        </div>
+        <div class = "card" id = "summary">
+          <h2>The bike brand that is most stolen in your area is: <span class="summary"></span></h2>
+          <p>Recently, out of <span class="totalStolenBikes"></span> bikes stolen, <span class="maxFreq"></span> were <span class="summary"></span> bikes.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
