@@ -66,23 +66,23 @@ $(document).ready(function() {
         }
         $(".summary").html(manufacturer);
         $(".maxFreq").html(maximumFrequency);
-        $(".totalStolenBikes").hrml(manufacturerArray.length);
+        $(".totalStolenBikes").html(manufacturerArray.length);
         response.bikes.forEach(function(bike) {
-          let unix_timestamp = "${bike.date_stolen}";
+          let unix_timestamp = `${bike.date_stolen}`;
           let date = new  Date(unix_timestamp *1000);
           let bikeThumb;
           if (bike.thumb != null) {
             bikeThumb = bike.thumb;
           } else {
-            bikeThumb = "https://depositphotos.com/8522974/stock-photo-bicycle-silhouette.html"
+            bikeThumb = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Bicycle-Silhouette.svg/640px-Bicycle-Silhouette.svg.png"
           }
           $("#bikeStats").append(`<div class='row'><div class='col-md-4'><strong>${bike.manufacturer_name}</strong> ${bike.frame_model}</div><div class='col-md-4'>${date}</div><div class='col-md-4'><center><img src='${bikeThumb}' alt='A photo of bike' height='200px' width='200px'></center></div> </div>`);
         });
       }
     };
     const returnGif = function(gifResponse) {
-      if (gifResponse.text != "undefined") {
-        $(".jumbotron").append(`<p>"${gifResponse.gifText}"</p>`);
+      if (gifResponse != "undefined") {
+        $(".jumbotron").append(`<img src = ${gifResponse.data.images.downsized_large.url}></img>`);
       }
     };
   });
